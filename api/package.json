@@ -1,0 +1,32 @@
+{
+	"name": "url-shortener-api",
+	"version": "1.0.0",
+	"description": "An API that simply shortens links",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest --collectCoverage --silent --testPathPattern=/src/test --maxWorkers=1, --forceExit --passWithNoTests",
+		"start": "node src/index.js",
+		"dev": "nodemon src"
+	},
+	"keywords": [
+		"short",
+		"links",
+		"API"
+	],
+	"author": "abelgarcia2",
+	"license": "MIT",
+	"devDependencies": {
+		"morgan": "^1.10.0",
+		"nodemon": "^2.0.15"
+	},
+	"dependencies": {
+		"dotenv": "^16.0.0",
+		"express": "^4.17.1",
+		"jest": "^27.4.7",
+		"joi": "^17.6.0",
+		"mongoose": "^6.1.6",
+		"nanoid": "^3.1.30",
+		"supertest": "^6.2.1"
+	}
+}
