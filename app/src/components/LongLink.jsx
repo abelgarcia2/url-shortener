@@ -1,23 +1,17 @@
 import { useState, useEffect } from 'react';
-import '../App.css'
+import '../App.css';
+import axios from 'axios';
 import ShortLink from './ShortLink';
 function LongLink() {
 	const [link, setLink] = useState('');
 	const [res, setRes] = useState('');
-	const url = '/api';
+	const url = '/api/shorten';
 
 	const handleClick = async () => {
-		const response = await fetch(url, {
-			method: 'POST',
-			body: JSON.stringify({ url: link }),
-			headers: {
-				'Content-Type': 'application/json',
-				'Access-Control-Allow-Origin': '',
-			},
-		});
-		setRes(await response.json().then((e) => e.code));
+		const response = await axios.post(url, { url: link });
+		setRes(await response.data.code);
 	};
-	
+
 	const handleChange = (e) => {
 		setLink(e.target.value);
 	};

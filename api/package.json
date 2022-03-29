@@ -1,7 +1,8 @@
 {
 	"name": "url-shortener-api",
 	"version": "1.0.0",
-	"description": "An API that simply shortens links",
+	"private": true,
+	"description": "",
 	"type": "module",
 	"main": "index.js",
 	"scripts": {

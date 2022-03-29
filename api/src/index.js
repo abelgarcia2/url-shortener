@@ -1,6 +1,6 @@
 import express from 'express';
 import './db.js';
-import apiRoutes from './routes/api.routes.js';
+import * as apiCtrl from './controllers/short.controller.js';
 
 const app = express();
 
@@ -9,7 +9,8 @@ app.use(express.static('../app/build'))
 
 app.get('/', (req, res) => res.json({ 'msg': 'Welcome to shortLink' }));
 
-app.use('/api', apiRoutes);
+app.post('/api/shorten', apiCtrl.shortLink)
+app.get('/:id', apiCtrl.getShortLink)
 
 app.listen(process.env.PORT, console.log('Server started on port ' + process.env.PORT));
 

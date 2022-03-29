@@ -6,7 +6,6 @@ import { nanoid } from 'nanoid';
 
 export const shortLink = async (req, res) => {
   const { url } = req.body;
-
   try {
     // await linkSchema.validateAsync(url)
     const findURL = await URL.findOne({ url });
@@ -22,13 +21,13 @@ export const shortLink = async (req, res) => {
       res.status(200).json({ 'code': code });
     }
   } catch (err) {
-    res.status(500).json({ msg: 'not valid' + err})
+    res.status(500).json({ msg: 'not valid' + err })
   }
 };
 
 export const getShortLink = async (req, res) => {
   const code = await URL.findOne({ code: req.params.id });
- 
+
   if (code != null) {
     res.redirect(code.url);
   } else {
