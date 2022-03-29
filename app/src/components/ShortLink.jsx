@@ -9,7 +9,7 @@ function ShortLink(props) {
 			return (
 				<div className='result'>
 					<a href={domain + props.url} target='_blank' rel='noreferrer'>
-						{domain + props.url}
+						{props.url}
 					</a>
 					<button onClick={copyLinkToClipboard} className='copyClipboard'>
 						Copy!
