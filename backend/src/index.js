@@ -5,7 +5,7 @@ import * as apiCtrl from './controllers/short.controller.js';
 const app = express();
 
 app.use(express.json());
-app.use(express.static('../app/build'))
+app.use(express.static('../frontend/build'))
 
 app.get('/', (req, res) => res.json({ 'msg': 'Welcome to shortLink' }));
 
